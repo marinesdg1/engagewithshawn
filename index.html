@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0d10" />
+  <meta name="theme-color" content="#ffffff" />
   <title>Pre-Buyer Engagement · Shawn Gerald</title>
   <meta name="description" content="Share your home search details with Shawn Gerald, Lifestyle International Realty Carolinas." />
   <style>
     :root {
-      --bg: #0b0d10;
-      --card: #14181f;
-      --ink: #f5f7fa;
-      --muted: #9aa3b2;
-      --line: #2a3140;
-      --teal: #1bb7a6;
-      --teal-dim: rgba(27, 183, 166, 0.15);
-      --danger: #e85d5d;
-      --ok: #3dd68c;
+      --bg: #ffffff;
+      --card: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #5c5c5c;
+      --line: #e6e6e6;
+      --teal: #0d9488;
+      --teal-dim: rgba(13, 148, 136, 0.14);
+      --fuchsia: #c026d3;
+      --fuchsia-dim: rgba(192, 38, 211, 0.12);
+      --danger: #dc2626;
+      --ok: #059669;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, #12202a 0%, var(--bg) 55%);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
       color: var(--ink);
       line-height: 1.5;
       min-height: 100vh;
@@ -35,23 +38,29 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--teal);
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 0 0 0.5rem; font-weight: 650; letter-spacing: -0.02em; }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #000;
+    }
     .lede { color: var(--muted); margin: 0 0 1rem; max-width: 42rem; }
     .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
     .chip {
       display: inline-flex; align-items: center; gap: 0.35rem;
       font-size: 0.8rem; color: var(--muted);
-      border: 1px solid var(--line); background: rgba(20,24,31,0.7);
+      border: 1px solid var(--line); background: #fff;
       border-radius: 999px; padding: 0.35rem 0.75rem;
     }
-    .chip a { color: var(--teal); text-decoration: none; font-weight: 560; }
+    .chip a { color: var(--fuchsia); text-decoration: none; font-weight: 600; }
     .section-title {
       margin: 0.35rem 0 0;
       font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--teal); font-weight: 650;
+      color: var(--teal); font-weight: 700;
     }
     form {
       background: var(--card);
@@ -60,16 +69,17 @@
       padding: 1.5rem;
       display: grid;
       gap: 1.1rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
     }
     .grid-2 { display: grid; gap: 1.1rem; }
     @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-    label { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 560; }
+    label { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 600; color: #111; }
     .hint { font-weight: 400; color: var(--muted); font-size: 0.8rem; }
-    .req { color: var(--teal); }
+    .req { color: var(--fuchsia); }
     input, select, textarea {
       width: 100%;
-      background: #0e1218;
-      border: 1px solid var(--line);
+      background: #fff;
+      border: 1px solid #d4d4d4;
       border-radius: 10px;
       color: var(--ink);
       padding: 0.7rem 0.85rem;
@@ -86,6 +96,7 @@
       border-radius: 12px;
       padding: 0.9rem 1rem 1rem;
       margin: 0;
+      background: #fcfcfc;
     }
     legend { padding: 0 0.35rem; color: var(--muted); font-size: 0.85rem; }
     .checks { display: grid; gap: 0.65rem; }
@@ -94,13 +105,13 @@
       font-weight: 450; font-size: 0.9rem; color: var(--muted);
     }
     .check input { width: auto; margin-top: 0.25rem; accent-color: var(--teal); }
-    .check strong { color: var(--ink); font-weight: 560; }
+    .check strong { color: var(--ink); font-weight: 600; }
     .actions { display: grid; gap: 0.65rem; }
     button[type="submit"] {
       appearance: none;
       border: none;
-      background: linear-gradient(135deg, #19c3b0, #129687);
-      color: #041612;
+      background: linear-gradient(135deg, var(--teal) 0%, #0f766e 55%, var(--fuchsia) 160%);
+      color: #fff;
       font-weight: 700;
       font-size: 1rem;
       padding: 0.95rem 1.2rem;
@@ -118,8 +129,8 @@
       border-radius: 10px;
       font-size: 0.92rem;
     }
-    .status.ok { display: block; background: rgba(61, 214, 140, 0.12); border: 1px solid rgba(61, 214, 140, 0.35); color: var(--ok); }
-    .status.err { display: block; background: rgba(232, 93, 93, 0.12); border: 1px solid rgba(232, 93, 93, 0.35); color: var(--danger); }
+    .status.ok { display: block; background: rgba(5, 150, 105, 0.08); border: 1px solid rgba(5, 150, 105, 0.3); color: var(--ok); }
+    .status.err { display: block; background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.3); color: var(--danger); }
     .status a { color: inherit; font-weight: 650; }
     footer {
       margin-top: 1.75rem;
@@ -128,8 +139,8 @@
       display: grid;
       gap: 0.35rem;
     }
-    footer a { color: var(--teal); text-decoration: none; }
-    .eho { margin-top: 0.5rem; opacity: 0.85; }
+    footer a { color: var(--teal); text-decoration: none; font-weight: 600; }
+    .eho { margin-top: 0.5rem; opacity: 0.9; }
     .divider {
       height: 1px; background: var(--line); margin: 0.15rem 0;
       border: 0;
